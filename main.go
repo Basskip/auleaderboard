@@ -349,7 +349,7 @@ func renderHTML(ordered_players []Player) {
 	templateMap["players"] = filtered
 	templateMap["time"] = time.Now().Unix()
 	t := template.Must(template.New("leaderboard.gohtml").Funcs(funcMap).ParseFiles("leaderboard.gohtml"))
-	f, _ := os.Create("./dist/index.html")
+	f, _ := os.Create("index.html")
 	err := t.Execute(f, templateMap)
 	if err != nil {
 		panic(err)
