@@ -1,0 +1,21 @@
+name: Update Leaderboard
+on: [push]
+jobs:
+  Update-Leaderboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+      - run: go run .
+        env:
+          STEAM_USERNAME: ${{ secrets.SteamUsername }}
+          STEAM_PASSWORD: ${{ secrets.SteamPassword }}
+      - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version.
+        with:
+          # The message for the commit.
+          # Default: 'Commit from GitHub Actions (name of the workflow)'
+          message: "Update leaderboard"
+
+          # Arguments for the git pull command. Use NO-PULL to avoid the action pulling at all.
+          # Default: '--no-rebase'
+          pull: "NO PULL"
