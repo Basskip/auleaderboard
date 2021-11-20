@@ -18,4 +18,4 @@ jobs:
 
           # Arguments for the git pull command. Use NO-PULL to avoid the action pulling at all.
           # Default: '--no-rebase'
-          pull: "NO PULL"
+          pull: "NO-PULL"
