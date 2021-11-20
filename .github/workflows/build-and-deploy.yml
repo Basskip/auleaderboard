@@ -1,5 +1,9 @@
 name: Update Leaderboard
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7-16 * * *"
+
 jobs:
   Update-Leaderboard:
     runs-on: ubuntu-latest
