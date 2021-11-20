@@ -1,5 +1,5 @@
 name: Update Leaderboard
-on: [push]
+on: [workflow_dispatch]
 jobs:
   Update-Leaderboard:
     runs-on: ubuntu-latest

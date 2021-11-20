@@ -24,10 +24,7 @@ func GetAllProfileCards(players []uint32) map[uint32]PlayerProfile {
 	responses := make(map[uint32]PlayerProfile)
 	le := log.New()
 	le.SetLevel(log.DebugLevel)
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	godotenv.Load()
 
 	fmt.Println("Starting")
 	steamUser := os.Getenv("STEAM_USERNAME")
