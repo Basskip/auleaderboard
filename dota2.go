@@ -37,7 +37,10 @@ func GetAllProfileCards(players []uint32) map[uint32]PlayerProfile {
 	client := bot.Client
 	auth := gsbot.NewAuth(bot, loginInfo, "sentry.bin")
 	serverList := gsbot.NewServerList(bot, "serverlist.json")
-	serverList.Connect()
+	_, err := serverList.Connect()
+	if err != nil {
+		panic(err)
+	}
 	d2 := dota2.New(client, le)
 	defer client.Disconnect()
 	defer d2.Close()
@@ -52,7 +55,7 @@ func GetAllProfileCards(players []uint32) map[uint32]PlayerProfile {
 		case *steam.LoggedOnEvent:
 			client.Social.SetPersonaState(steamlang.EPersonaState_Online)
 			d2.SetPlaying(true)
-			go establishDotaHello(d2, hello_done)
+			go establishDotaHello(d2, hello_done, 60)
 		case *devents.ClientWelcomed:
 			hello_done <- struct{}{}
 			for _, player := range players {
@@ -78,8 +81,9 @@ func GetAllProfileCards(players []uint32) map[uint32]PlayerProfile {
 	return responses
 }
 
-func establishDotaHello(d *dota2.Dota2, done chan struct{}) {
+func establishDotaHello(d *dota2.Dota2, done chan struct{}, limit int) {
 	ticker := time.NewTicker(5 * time.Second)
+	elapsed := 0
 	defer ticker.Stop()
 
 	for {
@@ -88,6 +92,12 @@ func establishDotaHello(d *dota2.Dota2, done chan struct{}) {
 			return
 		case <-ticker.C:
 			d.SayHello()
+			elapsed += 5
+			if elapsed > limit {
+				fmt.Println("Took too long to connect to Dota 2 GC")
+				d.Close()
+				return
+			}
 		}
 	}
 }
