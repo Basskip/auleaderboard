@@ -4,30 +4,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js"></script>
+  <title>AUS Dota Leaderboard</title>
 </head>
 <body>
-  <table>
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>SEA Rank</th>
-        <th>Personaname</th>
-        <th>Override</th>
-        <th>Activity</th>
-      <tr>
-    </thead>
-    <tbody>
-    {{ range $i, $p := . -}}
-      <tr>
-        <td>{{inc $i}}</td>
-        <td>{{$p.LeaderboardRank}}</td>
-        <td>{{$p.PersonaName}}</td>
-        <td>{{$p.OverrideName}}</td>
-        <td>{{activity $p.Counts}}</td>
-      </tr>
-    {{- end }}
-    </tbody>
-  </table>
+  <div class="container">
+    <h1>🇦🇺 AUS Dota Leaderboard</h1>
+    <span id="timestamp">{{.time}}</span>
+    <span id="last-update"></span>
+    <table id="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>SEA Rank</th>
+          <th class="left-column">Name</th>
+          <th><abbr title="Matches in the last 7 days (winrate)">AU Activity</abbr></th>
+          <th><abbr title="Matches in the last 7 days (winrate)">SEA Activity</th>
+        <tr>
+      </thead>
+      <tbody>
+      {{ range $i, $p := .players -}}
+        <tr>
+          <td>{{inc $i}}</td>
+          <td>{{$p.LeaderboardRank}}</td>
+          <td class="left-column">
+            {{if and (ne $p.OverrideName "") (ne $p.OverrideName $p.PersonaName)}}
+            <abbr title="{{$p.OverrideName}}">
+            {{end}}
+            {{$p.PersonaName}}
+            {{if and (ne $p.OverrideName "") (ne $p.OverrideName $p.PersonaName)}}
+            </abbr>
+            {{end}}
+          </td>
+          <td>{{activity $p.Counts "AU"}}</td>
+          <td>{{activity $p.Counts "SEA"}}</td>
+        </tr>
+      {{- end }}
+      </tbody>
+    </table>
+    <div>
+      <div class="question">What are the requirements to appear on the leaderboard?</div>
+      <div class="answer">
+        All of the following are required:
+        <ul>
+          <li>Ranked on the overall SEA leaderboard.</li>
+          <li>At least 1 game on the AU server in the past week.</li>
+          <li>Match history must be public.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

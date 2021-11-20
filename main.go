@@ -12,6 +12,7 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/mazznoer/colorgrad"
 	"golang.org/x/time/rate"
 )
 
@@ -138,9 +139,9 @@ func findPlayersInMatch(matchID uint64, ch chan []Player, c *RLHTTPClient) {
 	ch <- match_resp.Players
 }
 
-func findNewPlayersFromMatches(pf *PlayerFile, c *RLHTTPClient) PlayerFile {
+func findNewPlayersFromMatches(pf *PlayerFile, c *RLHTTPClient, count int) PlayerFile {
 	match_ch := make(chan []PlayerMatch)
-	limit := 30
+	limit := count
 	for _, player := range pf.Players {
 		if player.LeaderboardRank != 0 {
 			go playerRecentMatches(player, match_ch, c)
@@ -151,7 +152,7 @@ func findNewPlayersFromMatches(pf *PlayerFile, c *RLHTTPClient) PlayerFile {
 		}
 	}
 	unique_matches := make(map[uint64]bool)
-	for i := 0; i < 30; i++ {
+	for i := 0; i < count; i++ {
 		newmatches := <-match_ch
 		for _, match := range newmatches {
 			if _, ok := unique_matches[match.MatchID]; !ok {
@@ -179,13 +180,18 @@ func findNewPlayersFromMatches(pf *PlayerFile, c *RLHTTPClient) PlayerFile {
 	return new_from_matches
 }
 
-func findNewPlayersFromPeers(players *PlayerFile, c *RLHTTPClient) PlayerFile {
+func findNewPlayersFromPeers(players *PlayerFile, c *RLHTTPClient, count int) PlayerFile {
 	pch := make(chan []Player)
+	limit := count
 	for _, player := range players.Players {
 		go playerPeerRequest(player, pch, c)
+		limit--
+		if limit < 0 {
+			break
+		}
 	}
 	new_pf := PlayerFile{Players: make(map[string]Player)}
-	for range players.Players {
+	for i := 0; i < count; i++ {
 		newplayers := <-pch
 		for _, p := range newplayers {
 			accstring := fmt.Sprintf("%v", p.AccountID)
@@ -262,11 +268,11 @@ func main() {
 	c := NewClient(rl)
 	players := loadPlayers("players.json")
 
-	new_from_matches := findNewPlayersFromMatches(&players, c)
+	new_from_matches := findNewPlayersFromMatches(&players, c, 30)
 	delete(new_from_matches.Players, "0")
-	//new_from_peers := findNewPlayersFromPeers(&players, c)
+	new_from_peers := findNewPlayersFromPeers(&players, c, 30)
 
-	//players.update(&new_from_peers)
+	players.update(&new_from_peers)
 	players.update(&new_from_matches)
 
 	accountIDs := make([]uint32, len(players.Players))
@@ -302,10 +308,24 @@ func main() {
 	renderHTML(ordered_players)
 }
 
+func percentage(a, b int) float64 {
+	return float64(a) / float64(b)
+}
+
+var grad, _ = colorgrad.NewGradient().HtmlColors("red", "#EEEEEE", "#31e931").Domain(0.4, 0.5, 0.6).Build()
+
+func (r RegionScore) repr() string {
+	if r.Games > 0 {
+		percent := percentage(r.Wins, r.Games)
+		return fmt.Sprintf("%d <span style='color: %s'>(%.1f%%)</span>", r.Games, grad.At(percent).Hex(), percent*100)
+	}
+	return ""
+}
+
 func renderHTML(ordered_players []Player) {
 	filtered := []Player{}
 	for i := range ordered_players {
-		if ordered_players[i].LeaderboardRank != 0 && ordered_players[i].Counts.Region.AU.Games > 0 {
+		if ordered_players[i].Counts != nil && ordered_players[i].LeaderboardRank != 0 && ordered_players[i].Counts.Region.AU.Games > 0 {
 			filtered = append(filtered, ordered_players[i])
 		}
 	}
@@ -314,21 +334,23 @@ func renderHTML(ordered_players []Player) {
 		"inc": func(i int) int {
 			return i + 1
 		},
-		"activity": func(cinfo CountResponse) string {
-			str := ""
-			if cinfo.Region.SEA.Games > 0 {
-				str += fmt.Sprintf("SEA: %d (%d-%d) ", cinfo.Region.SEA.Games, cinfo.Region.SEA.Wins, cinfo.Region.SEA.Games-cinfo.Region.SEA.Wins)
+		"activity": func(cinfo CountResponse, region string) string {
+			if region == "SEA" {
+				return cinfo.Region.SEA.repr()
 			}
-			if cinfo.Region.AU.Games > 0 {
-				str += fmt.Sprintf("AU: %d (%d-%d)", cinfo.Region.AU.Games, cinfo.Region.AU.Wins, cinfo.Region.AU.Games-cinfo.Region.AU.Wins)
+			if region == "AU" {
+				return cinfo.Region.AU.repr()
 			}
-			return str
+			return ""
 		},
 	}
 
+	templateMap := map[string]interface{}{}
+	templateMap["players"] = filtered
+	templateMap["time"] = time.Now().Unix()
 	t := template.Must(template.New("leaderboard.gohtml").Funcs(funcMap).ParseFiles("leaderboard.gohtml"))
-	f, _ := os.Create("leaderboard.html")
-	err := t.Execute(f, filtered)
+	f, _ := os.Create("./dist/index.html")
+	err := t.Execute(f, templateMap)
 	if err != nil {
 		panic(err)
 	}
