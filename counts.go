@@ -11,6 +11,7 @@ import (
 type CountInfo struct {
 	Counts    CountResponse
 	AccountID uint32
+	Error     bool
 }
 
 type CountResponse struct {
@@ -34,9 +35,11 @@ func getPlayerCounts(players *PlayerFile, c *RLHTTPClient) {
 	}
 	for range players.Players {
 		cinfo := <-ch
-		player := players.Players[fmt.Sprint(cinfo.AccountID)]
-		player.Counts = &cinfo.Counts
-		players.Players[fmt.Sprint(cinfo.AccountID)] = player
+		if !cinfo.Error {
+			player := players.Players[fmt.Sprint(cinfo.AccountID)]
+			player.Counts = &cinfo.Counts
+			players.Players[fmt.Sprint(cinfo.AccountID)] = player
+		}
 	}
 }
 
@@ -50,6 +53,7 @@ func playerCountRequest(player Player, ch chan CountInfo, c *RLHTTPClient) {
 	count_info := CountInfo{AccountID: player.AccountID}
 	if resp.StatusCode != 200 {
 		fmt.Printf("Unexpected response %d\n", resp.StatusCode)
+		count_info.Error = true
 		ch <- count_info
 		return
 	}
