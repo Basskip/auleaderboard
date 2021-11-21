@@ -46,6 +46,7 @@ func GetAllProfileCards(players []uint32) map[uint32]PlayerProfile {
 	defer d2.Close()
 	hello_done := make(chan struct{})
 
+event_loop:
 	for event := range client.Events() {
 		auth.HandleEvent(event)
 		serverList.HandleEvent(event)
@@ -58,25 +59,25 @@ func GetAllProfileCards(players []uint32) map[uint32]PlayerProfile {
 			go establishDotaHello(d2, hello_done, 60)
 		case *devents.ClientWelcomed:
 			hello_done <- struct{}{}
-			for _, player := range players {
-				fmt.Printf("Requesting player %v\n", player)
-				msg, err := d2.GetProfileCard(context.TODO(), player)
-				fmt.Println(msg)
-				if err != nil {
-					le.Error(err)
-					continue
-				}
-				pp := PlayerProfile{}
-				if msg.RankTier != nil {
-					pp.RankTier = int(*msg.RankTier)
-				}
-				if msg.LeaderboardRank != nil {
-					pp.LeaderboardRank = int(*msg.LeaderboardRank)
-				}
-				responses[player] = pp
-			}
-			return responses
+			break event_loop
 		}
+	}
+	for _, player := range players {
+		fmt.Printf("Requesting player %v\n", player)
+		msg, err := d2.GetProfileCard(context.TODO(), player)
+		fmt.Println(msg)
+		if err != nil {
+			le.Error(err)
+			continue
+		}
+		pp := PlayerProfile{}
+		if msg.RankTier != nil {
+			pp.RankTier = int(*msg.RankTier)
+		}
+		if msg.LeaderboardRank != nil {
+			pp.LeaderboardRank = int(*msg.LeaderboardRank)
+		}
+		responses[player] = pp
 	}
 	return responses
 }
@@ -95,6 +96,7 @@ func establishDotaHello(d *dota2.Dota2, done chan struct{}, limit int) {
 			elapsed += 5
 			if elapsed > limit {
 				fmt.Println("Took too long to connect to Dota 2 GC")
+				close(done)
 				d.Close()
 				return
 			}
