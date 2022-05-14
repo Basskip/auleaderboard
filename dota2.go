@@ -36,8 +36,13 @@ func GetAllProfileCards(players []uint32) map[uint32]PlayerProfile {
 	bot := gsbot.Default()
 	client := bot.Client
 	auth := gsbot.NewAuth(bot, loginInfo, "sentry.bin")
+	debug, err := gsbot.NewDebug(bot, "debug")
+	if err != nil {
+		panic(err)
+	}
+	client.RegisterPacketHandler(debug)
 	serverList := gsbot.NewServerList(bot, "serverlist.json")
-	_, err := serverList.Connect()
+	_, err = serverList.Connect()
 	if err != nil {
 		panic(err)
 	}

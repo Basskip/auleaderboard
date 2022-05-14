@@ -2,7 +2,7 @@ name: Update Leaderboard
 on:
   workflow_dispatch:
   schedule:
-   # - cron: "0 7-16 * * *"
+    - cron: "0 7-16 * * *"
 
 jobs:
   Update-Leaderboard:
