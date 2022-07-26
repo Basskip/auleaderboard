@@ -133,7 +133,7 @@
     "personaname": "Kyrie",
     "override_name": "jandals",
     "rank_tier": 80,
-    "leaderboard_rank": 495,
+    "leaderboard_rank": 493,
     "counts": {
       "region": {
         "5": {
@@ -151,7 +151,7 @@
     "account_id": 16446200,
     "personaname": "Zavier",
     "rank_tier": 80,
-    "leaderboard_rank": 520,
+    "leaderboard_rank": 518,
     "counts": {
       "region": {
         "5": {
@@ -191,7 +191,7 @@
     "counts": {
       "region": {
         "5": {
-          "games": 8,
+          "games": 9,
           "win": 7
         },
         "7": {
@@ -260,7 +260,7 @@
     "account_id": 42997039,
     "personaname": "Tobz",
     "rank_tier": 80,
-    "leaderboard_rank": 650,
+    "leaderboard_rank": 649,
     "counts": {
       "region": {
         "5": {
@@ -282,7 +282,7 @@
     "counts": {
       "region": {
         "5": {
-          "games": 53,
+          "games": 52,
           "win": 27
         },
         "7": {
@@ -311,24 +311,6 @@
     }
   },
   {
-    "account_id": 86767526,
-    "personaname": "TAO.",
-    "rank_tier": 80,
-    "leaderboard_rank": 721,
-    "counts": {
-      "region": {
-        "5": {
-          "games": 0,
-          "win": 0
-        },
-        "7": {
-          "games": 7,
-          "win": 4
-        }
-      }
-    }
-  },
-  {
     "account_id": 383949208,
     "personaname": "Merchant",
     "override_name": "Merchant",
@@ -343,6 +325,24 @@
         "7": {
           "games": 0,
           "win": 0
+        }
+      }
+    }
+  },
+  {
+    "account_id": 86767526,
+    "personaname": "TAO.",
+    "rank_tier": 80,
+    "leaderboard_rank": 725,
+    "counts": {
+      "region": {
+        "5": {
+          "games": 0,
+          "win": 0
+        },
+        "7": {
+          "games": 7,
+          "win": 4
         }
       }
     }
@@ -369,7 +369,7 @@
     "account_id": 113555950,
     "personaname": "Magic ♥",
     "rank_tier": 80,
-    "leaderboard_rank": 765,
+    "leaderboard_rank": 767,
     "counts": {
       "region": {
         "5": {
@@ -500,7 +500,7 @@
     "counts": {
       "region": {
         "5": {
-          "games": 21,
+          "games": 20,
           "win": 11
         },
         "7": {
@@ -514,7 +514,7 @@
     "account_id": 356576669,
     "personaname": "The Shy",
     "rank_tier": 80,
-    "leaderboard_rank": 936,
+    "leaderboard_rank": 932,
     "counts": {
       "region": {
         "5": {
@@ -550,7 +550,7 @@
     "account_id": 80156365,
     "personaname": "twitch.tv/Mr HandCums",
     "rank_tier": 80,
-    "leaderboard_rank": 944,
+    "leaderboard_rank": 939,
     "counts": {
       "region": {
         "5": {
@@ -568,7 +568,7 @@
     "account_id": 156590692,
     "personaname": "minichin",
     "rank_tier": 80,
-    "leaderboard_rank": 1005,
+    "leaderboard_rank": 1000,
     "counts": {
       "region": {
         "5": {
@@ -586,7 +586,7 @@
     "account_id": 84923449,
     "personaname": "Science",
     "rank_tier": 80,
-    "leaderboard_rank": 1006,
+    "leaderboard_rank": 1007,
     "counts": {
       "region": {
         "5": {
@@ -608,7 +608,7 @@
     "counts": {
       "region": {
         "5": {
-          "games": 8,
+          "games": 9,
           "win": 2
         },
         "7": {
@@ -658,7 +658,7 @@
     "account_id": 414718293,
     "personaname": "J1ng",
     "rank_tier": 80,
-    "leaderboard_rank": 1066,
+    "leaderboard_rank": 1065,
     "counts": {
       "region": {
         "5": {
@@ -694,7 +694,7 @@
     "account_id": 137191402,
     "personaname": "Bumble2",
     "rank_tier": 80,
-    "leaderboard_rank": 1135,
+    "leaderboard_rank": 1132,
     "counts": {
       "region": {
         "5": {
@@ -752,8 +752,8 @@
     "counts": {
       "region": {
         "5": {
-          "games": 17,
-          "win": 9
+          "games": 18,
+          "win": 8
         },
         "7": {
           "games": 1,
@@ -802,7 +802,7 @@
     "account_id": 216685887,
     "personaname": "I know you where there",
     "rank_tier": 80,
-    "leaderboard_rank": 1339,
+    "leaderboard_rank": 1338,
     "counts": {
       "region": {
         "5": {
@@ -820,7 +820,7 @@
     "account_id": 83952632,
     "personaname": "nameless",
     "rank_tier": 80,
-    "leaderboard_rank": 1374,
+    "leaderboard_rank": 1371,
     "counts": {
       "region": {
         "5": {
@@ -838,7 +838,7 @@
     "account_id": 145562323,
     "personaname": "Enock",
     "rank_tier": 80,
-    "leaderboard_rank": 1409,
+    "leaderboard_rank": 1405,
     "counts": {
       "region": {
         "5": {
@@ -856,7 +856,7 @@
     "account_id": 116279388,
     "personaname": "Kimahri Ronso",
     "rank_tier": 80,
-    "leaderboard_rank": 1426,
+    "leaderboard_rank": 1424,
     "counts": {
       "region": {
         "5": {
@@ -874,7 +874,7 @@
     "account_id": 182258637,
     "personaname": "1",
     "rank_tier": 80,
-    "leaderboard_rank": 1436,
+    "leaderboard_rank": 1435,
     "counts": {
       "region": {
         "5": {
@@ -892,7 +892,7 @@
     "account_id": 168494473,
     "personaname": "EG.fedé jones.PINOYBET",
     "rank_tier": 80,
-    "leaderboard_rank": 1450,
+    "leaderboard_rank": 1449,
     "counts": {
       "region": {
         "5": {
@@ -910,7 +910,7 @@
     "account_id": 64769373,
     "personaname": "paw",
     "rank_tier": 80,
-    "leaderboard_rank": 1483,
+    "leaderboard_rank": 1484,
     "counts": {
       "region": {
         "5": {
@@ -920,6 +920,24 @@
         "7": {
           "games": 3,
           "win": 2
+        }
+      }
+    }
+  },
+  {
+    "account_id": 334214195,
+    "personaname": "patrick bateman",
+    "rank_tier": 80,
+    "leaderboard_rank": 1495,
+    "counts": {
+      "region": {
+        "5": {
+          "games": 11,
+          "win": 5
+        },
+        "7": {
+          "games": 13,
+          "win": 8
         }
       }
     }
@@ -946,7 +964,7 @@
     "account_id": 307484757,
     "personaname": "anime lover ^-^ *weeb*",
     "rank_tier": 80,
-    "leaderboard_rank": 1534,
+    "leaderboard_rank": 1533,
     "counts": {
       "region": {
         "5": {
@@ -968,7 +986,7 @@
     "counts": {
       "region": {
         "5": {
-          "games": 6,
+          "games": 7,
           "win": 2
         },
         "7": {
@@ -982,7 +1000,7 @@
     "account_id": 86763030,
     "personaname": "Alanphant - Plus Proche",
     "rank_tier": 80,
-    "leaderboard_rank": 1548,
+    "leaderboard_rank": 1549,
     "counts": {
       "region": {
         "5": {
@@ -992,24 +1010,6 @@
         "7": {
           "games": 6,
           "win": 2
-        }
-      }
-    }
-  },
-  {
-    "account_id": 334214195,
-    "personaname": "patrick bateman",
-    "rank_tier": 80,
-    "leaderboard_rank": 1550,
-    "counts": {
-      "region": {
-        "5": {
-          "games": 10,
-          "win": 5
-        },
-        "7": {
-          "games": 13,
-          "win": 8
         }
       }
     }
@@ -1054,7 +1054,7 @@
     "account_id": 458385717,
     "personaname": "EG.PIG.aus",
     "rank_tier": 80,
-    "leaderboard_rank": 1697,
+    "leaderboard_rank": 1693,
     "counts": {
       "region": {
         "5": {
@@ -1090,7 +1090,7 @@
     "account_id": 107947584,
     "personaname": "majistooo",
     "rank_tier": 80,
-    "leaderboard_rank": 1775,
+    "leaderboard_rank": 1774,
     "counts": {
       "region": {
         "5": {
@@ -1108,7 +1108,7 @@
     "account_id": 415337227,
     "personaname": "JohnnyJohnJohnson",
     "rank_tier": 80,
-    "leaderboard_rank": 1802,
+    "leaderboard_rank": 1801,
     "counts": {
       "region": {
         "5": {
@@ -1130,7 +1130,7 @@
     "counts": {
       "region": {
         "5": {
-          "games": 57,
+          "games": 58,
           "win": 28
         },
         "7": {
@@ -1144,7 +1144,7 @@
     "account_id": 404072377,
     "personaname": "laziness is my enemy",
     "rank_tier": 80,
-    "leaderboard_rank": 1877,
+    "leaderboard_rank": 1879,
     "counts": {
       "region": {
         "5": {
@@ -1177,6 +1177,24 @@
     }
   },
   {
+    "account_id": 455979230,
+    "personaname": "1/2/jg",
+    "rank_tier": 80,
+    "leaderboard_rank": 1948,
+    "counts": {
+      "region": {
+        "5": {
+          "games": 0,
+          "win": 0
+        },
+        "7": {
+          "games": 0,
+          "win": 0
+        }
+      }
+    }
+  },
+  {
     "account_id": 490567834,
     "personaname": "im outside your mothers house",
     "rank_tier": 80,
@@ -1190,24 +1208,6 @@
         "7": {
           "games": 7,
           "win": 2
-        }
-      }
-    }
-  },
-  {
-    "account_id": 455979230,
-    "personaname": "1/2/jg",
-    "rank_tier": 80,
-    "leaderboard_rank": 1953,
-    "counts": {
-      "region": {
-        "5": {
-          "games": 0,
-          "win": 0
-        },
-        "7": {
-          "games": 0,
-          "win": 0
         }
       }
     }
@@ -1234,7 +1234,7 @@
     "account_id": 164555798,
     "personaname": "sadboy",
     "rank_tier": 80,
-    "leaderboard_rank": 1974,
+    "leaderboard_rank": 1973,
     "counts": {
       "region": {
         "5": {
@@ -1260,7 +1260,7 @@
           "win": 8
         },
         "7": {
-          "games": 8,
+          "games": 7,
           "win": 1
         }
       }
@@ -1270,7 +1270,7 @@
     "account_id": 88951123,
     "personaname": "White Glint",
     "rank_tier": 80,
-    "leaderboard_rank": 2026,
+    "leaderboard_rank": 2027,
     "counts": {
       "region": {
         "5": {
@@ -1288,7 +1288,7 @@
     "account_id": 42461526,
     "personaname": "goated",
     "rank_tier": 80,
-    "leaderboard_rank": 2065,
+    "leaderboard_rank": 2064,
     "counts": {
       "region": {
         "5": {
@@ -1310,7 +1310,7 @@
     "counts": {
       "region": {
         "5": {
-          "games": 3,
+          "games": 4,
           "win": 2
         },
         "7": {
@@ -1324,7 +1324,7 @@
     "account_id": 86191593,
     "personaname": "shweb",
     "rank_tier": 80,
-    "leaderboard_rank": 2200,
+    "leaderboard_rank": 2199,
     "counts": {
       "region": {
         "5": {
@@ -1386,8 +1386,8 @@
           "win": 0
         },
         "7": {
-          "games": 18,
-          "win": 10
+          "games": 17,
+          "win": 9
         }
       }
     }
@@ -1396,7 +1396,7 @@
     "account_id": 955648778,
     "personaname": "h3ro",
     "rank_tier": 80,
-    "leaderboard_rank": 2253,
+    "leaderboard_rank": 2252,
     "counts": {
       "region": {
         "5": {
@@ -1432,7 +1432,7 @@
     "account_id": 128340645,
     "personaname": "Johnee",
     "rank_tier": 80,
-    "leaderboard_rank": 2323,
+    "leaderboard_rank": 2325,
     "counts": {
       "region": {
         "5": {
@@ -1486,7 +1486,7 @@
     "account_id": 187279872,
     "personaname": "SeveM",
     "rank_tier": 80,
-    "leaderboard_rank": 2532,
+    "leaderboard_rank": 2536,
     "counts": {
       "region": {
         "5": {
@@ -1522,7 +1522,7 @@
     "account_id": 110810727,
     "personaname": "Up",
     "rank_tier": 80,
-    "leaderboard_rank": 2639,
+    "leaderboard_rank": 2640,
     "counts": {
       "region": {
         "5": {
@@ -1558,7 +1558,7 @@
     "account_id": 156466796,
     "personaname": "uwu",
     "rank_tier": 80,
-    "leaderboard_rank": 2753,
+    "leaderboard_rank": 2750,
     "counts": {
       "region": {
         "5": {
@@ -1576,7 +1576,7 @@
     "account_id": 133667849,
     "personaname": "Pondoz (sage mask enjoyer)",
     "rank_tier": 80,
-    "leaderboard_rank": 2793,
+    "leaderboard_rank": 2794,
     "counts": {
       "region": {
         "5": {
@@ -1594,7 +1594,7 @@
     "account_id": 91851556,
     "personaname": "Discombobulated",
     "rank_tier": 80,
-    "leaderboard_rank": 2920,
+    "leaderboard_rank": 2918,
     "counts": {
       "region": {
         "5": {
@@ -1604,6 +1604,24 @@
         "7": {
           "games": 0,
           "win": 0
+        }
+      }
+    }
+  },
+  {
+    "account_id": 108261498,
+    "personaname": "my supp = ez gg sry",
+    "rank_tier": 80,
+    "leaderboard_rank": 2990,
+    "counts": {
+      "region": {
+        "5": {
+          "games": 0,
+          "win": 0
+        },
+        "7": {
+          "games": 10,
+          "win": 3
         }
       }
     }
@@ -1622,24 +1640,6 @@
         "7": {
           "games": 2,
           "win": 2
-        }
-      }
-    }
-  },
-  {
-    "account_id": 108261498,
-    "personaname": "my supp = ez gg sry",
-    "rank_tier": 80,
-    "leaderboard_rank": 2991,
-    "counts": {
-      "region": {
-        "5": {
-          "games": 0,
-          "win": 0
-        },
-        "7": {
-          "games": 10,
-          "win": 3
         }
       }
     }
@@ -1666,7 +1666,7 @@
     "account_id": 158953896,
     "personaname": "Fed",
     "rank_tier": 80,
-    "leaderboard_rank": 3008,
+    "leaderboard_rank": 3011,
     "counts": {
       "region": {
         "5": {
@@ -1702,12 +1702,12 @@
     "account_id": 137773057,
     "personaname": "暴走Viola·/-",
     "rank_tier": 80,
-    "leaderboard_rank": 3075,
+    "leaderboard_rank": 3073,
     "counts": {
       "region": {
         "5": {
-          "games": 40,
-          "win": 20
+          "games": 39,
+          "win": 19
         },
         "7": {
           "games": 3,
@@ -1721,7 +1721,7 @@
     "personaname": "beats",
     "override_name": "allison",
     "rank_tier": 80,
-    "leaderboard_rank": 3118,
+    "leaderboard_rank": 3113,
     "counts": {
       "region": {
         "5": {
@@ -1739,7 +1739,7 @@
     "account_id": 249279448,
     "personaname": "JungleNaut",
     "rank_tier": 80,
-    "leaderboard_rank": 3128,
+    "leaderboard_rank": 3127,
     "counts": {
       "region": {
         "5": {
@@ -1757,7 +1757,7 @@
     "account_id": 115294887,
     "personaname": ".",
     "rank_tier": 80,
-    "leaderboard_rank": 3481,
+    "leaderboard_rank": 3482,
     "counts": {
       "region": {
         "5": {
@@ -1868,7 +1868,7 @@
     "counts": {
       "region": {
         "5": {
-          "games": 0,
+          "games": 1,
           "win": 0
         },
         "7": {
@@ -1882,7 +1882,7 @@
     "account_id": 116924960,
     "personaname": "Original Captain Lex",
     "rank_tier": 80,
-    "leaderboard_rank": 3802,
+    "leaderboard_rank": 3803,
     "counts": {
       "region": {
         "5": {
@@ -1900,7 +1900,7 @@
     "account_id": 105563614,
     "personaname": "recovery",
     "rank_tier": 80,
-    "leaderboard_rank": 3822,
+    "leaderboard_rank": 3824,
     "counts": {
       "region": {
         "5": {
